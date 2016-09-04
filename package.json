@@ -1,0 +1,45 @@
+{
+  "name": "react-sequence-viewer",
+  "version": "1.0.0",
+  "description": "A React wrapper around the BioJS sequence-viewer component",
+  "main": "lib/index.js",
+  "jsnext:main": "es/index.js",
+  "module": "es/index.js",
+  "files": [
+    "css",
+    "es",
+    "lib",
+    "umd"
+  ],
+  "scripts": {
+    "build": "nwb build-react-component",
+    "clean": "nwb clean-module && npm clean-demo",
+    "start": "nwb serve-react-demo",
+    "test": "nwb test",
+    "test:coverage": "nwb test --coverage",
+    "test:watch": "nwb test --server"
+  },
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "sequence-viewer": "^0.2.18"
+  },
+  "peerDependencies": {
+    "react": "15.x"
+  },
+  "devDependencies": {
+    "nwb": "0.12.x",
+    "react": "^15.3.1",
+    "react-dom": "^15.3.1"
+  },
+  "author": "Josh Goodman",
+  "homepage": "",
+  "license": "MIT",
+  "repository": "https://github.com/FlyBase/react-sequence-viewer",
+  "keywords": [
+    "react-component",
+    "BioJS",
+    "sequence-viewer",
+    "FASTA",
+    "sequence"
+  ]
+}
