@@ -78,11 +78,11 @@ for more details on the options below.
 | onMouseSelection | Event handler for sequence selection with the mouse | function | No |  |
 | onSubpartSelected | Event handler for sequence selected via the search box | function | No |  |
 
-[build-badge]: https://img.shields.io/travis/user/repo/master.png?style=flat-square
+[build-badge]: https://img.shields.io/travis/FlyBase/react-sequence-viewer/master.png?style=flat-square
 [build]: https://travis-ci.org/FlyBase/react-sequence-viewer
 
-[npm-badge]: https://img.shields.io/npm/v/npm-package.png?style=flat-square
+[npm-badge]: https://img.shields.io/npm/v/react-sequence-viewer.png?style=flat-square
 [npm]: https://www.npmjs.org/package/react-sequence-viewer
 
-[coveralls-badge]: https://img.shields.io/coveralls/user/repo/master.png?style=flat-square
+[coveralls-badge]: https://img.shields.io/coveralls/FlyBase/react-sequence-viewer/master.png?style=flat-square
 [coveralls]: https://coveralls.io/github/FlyBase/react-sequence-viewer
