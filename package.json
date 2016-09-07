@@ -21,6 +21,8 @@
   },
   "dependencies": {
     "bootstrap": "^3.3.7",
+    "handlebars": "3.0.2",
+    "jquery": "^3.1.0",
     "sequence-viewer": "^0.2.18"
   },
   "peerDependencies": {
