@@ -1,23 +1,41 @@
-import expect from 'expect'
-import React from 'react'
-import {render, unmountComponentAtNode} from 'react-dom'
+import React from 'react';
+import expect, {spyOn, createSpy} from 'expect';
+import { mount, shallow } from 'enzyme';
 
-import Component from 'src/'
+import Component from 'src/';
 
-describe('Component', () => {
-  let node
+describe('<Component />', () => {
+    const sequence = 'ctcgatgctagtcgatgctagtcgtagcta';
 
-  beforeEach(() => {
-    node = document.createElement('div')
-  })
+    let parent = document.createElement('div');
+    parent.id = 'test';
 
-  afterEach(() => {
-    unmountComponentAtNode(node)
-  })
+    beforeEach(() => {
+        document.body.appendChild(parent);
+    });
 
-  it('displays a welcome message', () => {
-    render(<Component/>, node, () => {
-      expect(node.innerHTML).toContain('Welcome to React components')
-    })
-  })
-})
+    afterEach(() => {
+        document.body.removeChild(parent);
+    });
+
+    it('calls componentDidMount', () => {
+        const spy = spyOn(Component.prototype, 'componentDidMount');
+        const wrapper = mount(<Component id="test" sequence="cgtagtcgatca" />);
+        expect(spy).toHaveBeenCalled();
+    });
+
+    it('checking required props', () => {
+        const wrapper = mount(<Component id="test" sequence={sequence} />);
+        expect(wrapper.props().sequence).toEqual(sequence);
+        expect(wrapper.props().id).toEqual("test");
+    });
+
+    /*it('charsPerLine onClick handler fired', () => {
+        const spy = createSpy();
+        const wrapper = mount(<Component id="test" sequence={sequence} toolbar={true} handleChange={spy} />);
+        console.debug(wrapper.find('.sequenceToolbar'));
+        wrapper.find('option[value="100"]').simulate('click');
+        expect(spy).toHaveBeenCalled();
+        });*/
+});
+

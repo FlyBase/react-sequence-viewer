@@ -20,6 +20,9 @@ module.exports =  {
         // and a webpack loader to precompile them.  The sequence-viewer component
         // uses inline Handlebars.js templates currently.
         webpack: {
+            compat: {
+                enzyme: true
+            },
             aliases: {
                 'handlebars': path.resolve("node_modules/handlebars/dist/handlebars.min.js"),
                 'jQuery': path.resolve("node_modules/jquery/dist/jquery.min.js")

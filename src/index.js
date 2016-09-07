@@ -75,6 +75,8 @@ export default class ReactSequenceViewer extends Component {
 }
 
 ReactSequenceViewer.propTypes = {
+    id: PropTypes.string.isRequired,
+    sequence: PropTypes.string.isRequired,
     coverage: PropTypes.arrayOf(
         PropTypes.shape({
         start: PropTypes.number.isRequired,
@@ -102,4 +104,5 @@ ReactSequenceViewer.defaultProps = {
     seqLenClass: "CPLChoice",
     onMouseSelection: (elem) => {},
     onSubpartSelected: (elem) => {},
+    className: '',
 }
