@@ -18,9 +18,11 @@ const subPart = (e) => {
     console.log("Subpart");
     console.log(e.detail);
 }
+
+const selection = [0,30,'red']
+
 //Coverage list
 const exampleSequenceCoverage = [
-    {start: 0, end: 25, color: "black", underscore: false, bgcolor: "#ffd891"},
     {start: 25, end: 47, color: "#ff0000", underscore: false, tooltip: "this is a tooltip"},
     {start: 47, end: 54, color: "#ff0000", underscore: true},
     {start: 54, end: 55, color: "#ff0000", underscore: false},
@@ -41,7 +43,7 @@ let Demo = React.createClass({
     render() {
         return <div>
             <h1>react-sequence-viewer Demo</h1>
-            <Component onSubpartSelected={subPart} onMouseSelection={mouseClick} legend={exampleLegend} coverage={exampleSequenceCoverage} id="blah" sequence={seq} showLineNumbers={true} toolbar={true} search={true} badge={false} title="" />
+            <Component onSubpartSelected={subPart} onMouseSelection={mouseClick} legend={exampleLegend} coverage={exampleSequenceCoverage} sequence={seq} showLineNumbers={true} toolbar={true} search={true} badge={false} title="" />
         </div>
   }
 })

@@ -1,4 +1,5 @@
 import React, {PropTypes, Component} from 'react';
+import { v4 } from 'node-uuid';
 
 import Bootstrap from 'bootstrap/dist/css/bootstrap.min.css';
 // See nwb.config.js for some webpack magic that allows this to work.
@@ -9,6 +10,9 @@ export default class ReactSequenceViewer extends Component {
         super(props);
         this.handleChange = this.handleChange.bind(this);
 
+        if (props.selection && props.selection.length > 0 && props.coverage && props.coverage.length > 0) {
+            console.warn("The selection and coverage options are not compatible with each other.");
+        }
         // Initialize the sequence-viewer object.
         this._seqObj = new Sequence(this.props.sequence);
         this._div = null;
@@ -21,13 +25,17 @@ export default class ReactSequenceViewer extends Component {
     // callRender({toolbar: false})
     // would override the existing toolbar setting.
     callRender(newProps = {}) {
+        const { selection, ...props} = this.props;
+
         // Read in div from private variable.
         const div = this._div;
+
         //Render div if it is not null.
-        if (div != null) {
-            this._seqObj.render('#' + div.id,{...this.props,...newProps});
+        if (div !== null) {
+            this._seqObj.render('#' + div.id,{...props,...newProps});
             this._seqObj.coverage(this.props.coverage);
             this._seqObj.addLegend(this.props.legend);
+            if (selection.length > 0) this._seqObj.selection(...selection);
         }
     }
 
@@ -67,16 +75,22 @@ export default class ReactSequenceViewer extends Component {
         // in the DOM.  The componentDidMount function above will then get called
         // and render the widget.
         return (
-            <div className={className}>
-                <div id={this.props.id} ref={(div) => this._div = div}></div>
-            </div>
+            <div className={className} id={this.props.id} ref={(div) => this._div = div}></div>
         );
     }
 }
 
 ReactSequenceViewer.propTypes = {
-    id: PropTypes.string.isRequired,
+    id: PropTypes.string,
     sequence: PropTypes.string.isRequired,
+    className: PropTypes.string,
+    selection: PropTypes.arrayOf((arr, key, compName, location, propFullName) => {
+        if (arr.length !== 3) {
+            return new Error(
+                'Invalid prop `selection` supplied to `' + compName + '`. Validation failed.'
+            );
+        }
+    }),
     coverage: PropTypes.arrayOf(
         PropTypes.shape({
         start: PropTypes.number.isRequired,
@@ -99,8 +113,10 @@ ReactSequenceViewer.propTypes = {
 };
 
 ReactSequenceViewer.defaultProps = {
+    id: v4(),
     coverage: [],
     legend: [],
+    selection: [], 
     seqLenClass: "CPLChoice",
     onMouseSelection: (elem) => {},
     onSubpartSelected: (elem) => {},
