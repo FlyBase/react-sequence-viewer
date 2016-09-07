@@ -67,16 +67,16 @@ Please see the [Sequence Viewer documentation](https://cdn.rawgit.com/calipho-si
 for more details on the options below.
 
 
-| Name | Description | Default Value | Type | Required | Comment |
-|:-----|:------------|---------------|------|----------|:--------|
-| id | The ID to use for the Sequence Viewer container element | A random unique ID | String | No |  |
-| className | HTML class name to apply to the Sequence Viewer div container |  | String | No |  |
-| sequence | The sequence to render. |  | String | Yes |  |
-| selection | A region to highlight |  | Array | No | Not compatible with `coverage` |
-| coverage | Advanced sequence hightlighting |  | Array[Objects] | No | Not compatible with `selection` |
-| legend | Adds a legend to the sequence |  |  | Array[Objects] | No |  |
-| onMouseSelection | Event handler for sequence selection with the mouse |  | function | No |  |
-| onSubpartSelected | Event handler for sequence selected via the search box |  | function | No |  |
+| Name | Description | Type | Required | Comment |
+|:-----|:------------|------|----------|:--------|
+| id | The ID to use for the Sequence Viewer container element | String | No |  |
+| className | HTML class name to apply to the Sequence Viewer div container | String | No |  |
+| sequence | The sequence to render. | String | Yes |  |
+| selection | A region to highlight | Array | No | Not compatible with `coverage` |
+| coverage | Advanced sequence hightlighting | Array[Objects] | No | Not compatible with `selection` |
+| legend | Adds a legend to the sequence  |  Array[Objects] | No |  |
+| onMouseSelection | Event handler for sequence selection with the mouse | function | No |  |
+| onSubpartSelected | Event handler for sequence selected via the search box | function | No |  |
 
 [build-badge]: https://img.shields.io/travis/user/repo/master.png?style=flat-square
 [build]: https://travis-ci.org/FlyBase/react-sequence-viewer
