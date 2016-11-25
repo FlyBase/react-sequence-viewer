@@ -1,6 +1,6 @@
 {
   "name": "react-sequence-viewer",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A React wrapper around the BioJS sequence-viewer component",
   "main": "lib/index.js",
   "jsnext:main": "es/index.js",
