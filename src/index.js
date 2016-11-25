@@ -1,5 +1,5 @@
 import React, {PropTypes, Component} from 'react';
-import { v4 } from 'node-uuid';
+import { v4 } from 'uuid';
 
 import Bootstrap from 'bootstrap/dist/css/bootstrap.min.css';
 // See nwb.config.js for some webpack magic that allows this to work.
