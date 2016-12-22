@@ -2,6 +2,12 @@ import React from 'react';
 import expect, {spyOn, createSpy} from 'expect';
 import { mount, shallow } from 'enzyme';
 
+import jquery from 'jquery';
+
+window.jQuery = jquery;
+
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 import Component from 'src/';
 
 describe('<Component />', () => {

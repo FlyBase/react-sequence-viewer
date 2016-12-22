@@ -2,6 +2,10 @@ import React from 'react'
 import {render} from 'react-dom'
 
 import Component from '../../src'
+import jquery from 'jquery';
+window.jQuery = jquery;
+
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 //const seq = 'MALWMRLLPLLALLALWGPGPGAGSLQPLALEGSLQKRGIVEQCCTSICSLYQLENYCN';
 const seq = 'MALWMRLLPLLALLALWGPDPAAAFVNQHLCGSHLVEALYLVCGERGFFYTPKTRREAEDLQVGQVELGGGPGAGSLQPLALEGSLQKRGIVEQCCTSICSLYQLENYCN';
@@ -43,7 +47,7 @@ let Demo = React.createClass({
     render() {
         return <div>
             <h1>react-sequence-viewer Demo</h1>
-            <Component onSubpartSelected={subPart} onMouseSelection={mouseClick} legend={exampleLegend} coverage={exampleSequenceCoverage} sequence={seq} showLineNumbers={true} toolbar={true} search={true} badge={false} title="" />
+            <Component onSubpartSelected={subPart} onMouseSelection={mouseClick} legend={exampleLegend} coverage={exampleSequenceCoverage} sequence={seq} showLineNumbers={true} toolbar={true} search={true} badge={true} title="My Protein" />
         </div>
   }
 })

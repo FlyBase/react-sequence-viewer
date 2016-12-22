@@ -15,6 +15,22 @@ component.
 npm install --save react-sequence-viewer
 ```
 
+## Dependencies
+
+The following are dependencies required by the `sequence-viewer` module that is wrapped
+by this React component.
+
+* jQuery 
+* Bootstrap CSS
+
+You can either include these into your HTML page or add them to your 
+own application build (see usage below).
+
+````html
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<link type="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></link>
+```
+
 ## Usage
 
 The following code renders a sequence-viewer component in the HTML
@@ -25,6 +41,16 @@ element with an ID of 'sequence-viewer1'.
 ```jsx
 import React from 'react';
 import {render} from 'react-dom';
+
+// Either uncomment these lines or pull
+// in jQuery and Bootstrap into the HTML page of your application.
+// The below requires that jQuery/Bootstrap be installed as a dependency
+// in your package.json file.
+//import jquery from 'jquery';
+//window.jQuery = jquery;
+
+//import 'bootstrap/dist/css/bootstrap.min.css';
+
 import ReactSequenceViewer from 'react-sequence-viewer';
 
 const mySeq = 'CAGTCGATCGTAGCTAGCTAGCTGATCGATGC';
@@ -41,6 +67,16 @@ render(React.createClass({
 ```jsx
 import React from 'react';
 import {render} from 'react-dom';
+
+// Either uncomment these lines or pull
+// in jQuery and Bootstrap into the HTML page of your application.
+// The below requires that jQuery/Bootstrap be installed as a dependency
+// in your package.json file.
+//import jquery from 'jquery';
+//window.jQuery = jquery;
+
+//import 'bootstrap/dist/css/bootstrap.min.css';
+
 import ReactSequenceViewer from 'react-sequence-viewer';
 
 const mySeq = 'CAGTCGATCGTAGCTAGCTAGCTGATCGATGC';
