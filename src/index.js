@@ -31,16 +31,16 @@ export default class ReactSequenceViewer extends Component {
     //Render div if it is not null.
     if (div !== null) {
       this._seqObj.render('#' + div.id,{...props,...newProps});
-      this._seqObj.coverage(this.props.coverage);
-      this._seqObj.addLegend(this.props.legend);
+      if (this.props.coverage.length > 0) this._seqObj.coverage(this.props.coverage);
+      if (this.props.legend.length > 0) this._seqObj.addLegend(this.props.legend);
       if (selection.length > 0) this._seqObj.selection(...selection);
     }
   }
 
   // When the component mounts, add a change listenver to the document
   // and call render.  We attach the change listener here becuase
-  // jQuery events don't see to bubble up through React properly.
-  // Thus, when a user toggles the charsPerLine drop down menu.
+  // jQuery events don't bubble up through React due to its synthetic event
+  // handling.  Thus, when a user toggles the charsPerLine drop down menu.
   // the event is handled by jQuery, but not seen by React when the
   // listener is attached at the component div level.
   // Attaching it to the document seems to work.
