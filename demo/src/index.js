@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { Component } from 'react'
 import {render} from 'react-dom'
 
-import Component from '../../src'
+import MyComponent from '../../src'
 import jquery from 'jquery';
 window.jQuery = jquery;
 
@@ -43,13 +43,27 @@ const exampleLegend = [
     {name: "Synthetic peptide",color: "#fff",underscore: true}
 ];
 
-let Demo = React.createClass({
-    render() {
-        return <div>
-            <h1>react-sequence-viewer Demo</h1>
-            <Component onSubpartSelected={subPart} onMouseSelection={mouseClick} legend={exampleLegend} coverage={exampleSequenceCoverage} sequence={seq} showLineNumbers={true} toolbar={true} search={true} badge={true} title="My Protein" />
-        </div>
+class Demo extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      seq: this.props.seq,
+    };
+    this.handleOnClick = this.handleOnClick.bind(this);
   }
-})
 
-render(<Demo/>, document.querySelector('#demo'))
+  handleOnClick(e) {
+    console.debug('onclick fired');
+    this.setState({seq:'CAGTCGTAGTAC'});
+  }
+
+  render() {
+    return <div>
+      <h1>react-sequence-viewer Demo</h1>
+      <button onClick={this.handleOnClick}>Click me</button>
+      <MyComponent onSubpartSelected={subPart} onMouseSelection={mouseClick} legend={exampleLegend} coverage={exampleSequenceCoverage} sequence={this.state.seq} showLineNumbers={true} toolbar={true} search={true} badge={true} title="My Protein" />
+    </div>
+  }
+}
+
+render(<Demo seq={seq}/>, document.querySelector('#demo'))

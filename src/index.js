@@ -51,6 +51,18 @@ export default class ReactSequenceViewer extends Component {
     this._seqObj.onMouseSelection(this.props.onMouseSelection);
   }
 
+  // Update the sequence-viewer object if we get a new DNA sequence.
+  componentWillReceiveProps(nextProps) { 
+    if (this.props.sequence !== nextProps.sequence) {
+      this._seqObj = new Sequence(nextProps.sequence);
+    }
+  }
+
+  // Re-render if the component has updated.
+  componentDidUpdate() {
+    this.callRender();
+  }
+
   // Remove the event listener when the component is unmounted.
   componentWillUnmount() {
     document.removeEventListener('change', this.handleChange);
