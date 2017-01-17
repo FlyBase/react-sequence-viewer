@@ -7,6 +7,7 @@ export default class ReactSequenceViewer extends Component {
   constructor(props) {
     super(props);
     this.handleChange = this.handleChange.bind(this);
+    this.handleRef    = this.handleRef.bind(this);
 
     if (props.selection && props.selection.length > 0 && props.coverage && props.coverage.length > 0) {
       console.warn("The selection and coverage options are not compatible with each other.");
@@ -59,8 +60,10 @@ export default class ReactSequenceViewer extends Component {
   }
 
   // Re-render if the component has updated.
-  componentDidUpdate() {
-    this.callRender();
+  componentDidUpdate(prevProps, prevState) {
+    if (this.props !== prevProps) {
+      this.callRender();
+    }
   }
 
   // Remove the event listener when the component is unmounted.
@@ -78,6 +81,10 @@ export default class ReactSequenceViewer extends Component {
     }
   }
 
+  handleRef(div) {
+    this._div = div;
+  }
+
   // Render a div with the sequence-viwer widget in it.
   render() {
     const { id, sequence, className } = this.props;
@@ -85,7 +92,7 @@ export default class ReactSequenceViewer extends Component {
     // in the DOM.  The componentDidMount function above will then get called
     // and render the widget.
     return (
-      <div className={className} id={this.props.id} ref={(div) => this._div = div}></div>
+      <div className={className} id={this.props.id} ref={this.handleRef}></div>
     );
   }
 }

@@ -61,7 +61,17 @@ class Demo extends Component {
     return <div>
       <h1>react-sequence-viewer Demo</h1>
       <button onClick={this.handleOnClick}>Click me</button>
-      <MyComponent onSubpartSelected={subPart} onMouseSelection={mouseClick} legend={exampleLegend} coverage={exampleSequenceCoverage} sequence={this.state.seq} showLineNumbers={true} toolbar={true} search={true} badge={true} title="My Protein" />
+      <MyComponent
+        onSubpartSelected={subPart}
+        onMouseSelection={mouseClick}
+        legend={exampleLegend}
+        coverage={exampleSequenceCoverage}
+        sequence={this.state.seq}
+        showLineNumbers={true}
+        toolbar={true}
+        search={true}
+        badge={true}
+        title="My Protein" />
     </div>
   }
 }
