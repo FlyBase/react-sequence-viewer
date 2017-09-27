@@ -1,10 +1,6 @@
 # react-sequence-viewer
 
-[![Travis][build-badge]][build]
-[![npm package][npm-badge]][npm]
-[![Coveralls][coveralls-badge]][coveralls]
-
-##Description
+## Description
 
 A [React](https://facebook.github.io/react/) wrapper around the [BioJS](https://biojs.net/) [sequence-viewer](https://github.com/calipho-sib/sequence-viewer)
 component.
@@ -26,7 +22,7 @@ by this React component.
 You can either include these into your HTML page or add them to your 
 own application build (see usage below).
 
-````html
+```html
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></link>
 ```
