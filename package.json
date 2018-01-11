@@ -1,6 +1,6 @@
 {
   "name": "react-sequence-viewer",
-  "version": "0.1.5",
+  "version": "0.2.0",
   "description": "A React wrapper around the BioJS sequence-viewer component",
   "main": "lib/index.js",
   "jsnext:main": "es/index.js",
@@ -24,21 +24,25 @@
     "uuid": "^3.0.1"
   },
   "peerDependencies": {
-    "react": "15.x"
+    "react": "^16.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/FlyBase/react-sequence-viewer"
   },
   "devDependencies": {
     "bootstrap": "^3.3.7",
-    "enzyme": "^2.4.1",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
     "jquery": "^3.1.1",
-    "nwb": "0.13.x",
-    "react": "^15.3.1",
-    "react-addons-test-utils": "^15.3.1",
-    "react-dom": "^15.3.1"
+    "nwb": "0.21.0",
+    "prop-types": "^15.6.0",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0"
   },
   "author": "Josh Goodman",
   "homepage": "",
   "license": "MIT",
-  "repository": "https://github.com/FlyBase/react-sequence-viewer",
   "keywords": [
     "react-component",
     "BioJS",

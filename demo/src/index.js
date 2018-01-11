@@ -60,7 +60,7 @@ class Demo extends Component {
   render() {
     return <div>
       <h1>react-sequence-viewer Demo</h1>
-      <button onClick={this.handleOnClick}>Click me</button>
+      <button onClick={this.handleOnClick}>Click me to change the sequence</button>
       <MyComponent
         onSubpartSelected={subPart}
         onMouseSelection={mouseClick}
