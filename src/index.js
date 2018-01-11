@@ -1,9 +1,10 @@
-import React, {PropTypes, Component} from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { v4 } from 'uuid';
 
 import Sequence from 'sequence-viewer';
 
-export default class ReactSequenceViewer extends Component { 
+export default class ReactSequenceViewer extends Component {
   constructor(props) {
     super(props);
     this.handleChange = this.handleChange.bind(this);
@@ -38,8 +39,8 @@ export default class ReactSequenceViewer extends Component {
     }
   }
 
-  // When the component mounts, add a change listenver to the document
-  // and call render.  We attach the change listener here becuase
+  // When the component mounts, add a change listener to the document
+  // and call render.  We attach the change listener here because
   // jQuery events don't bubble up through React due to its synthetic event
   // handling.  Thus, when a user toggles the charsPerLine drop down menu.
   // the event is handled by jQuery, but not seen by React when the
@@ -53,7 +54,7 @@ export default class ReactSequenceViewer extends Component {
   }
 
   // Update the sequence-viewer object if we get a new DNA sequence.
-  componentWillReceiveProps(nextProps) { 
+  componentWillReceiveProps(nextProps) {
     if (this.props.sequence !== nextProps.sequence) {
       this._seqObj = new Sequence(nextProps.sequence);
     }
@@ -110,20 +111,20 @@ ReactSequenceViewer.propTypes = {
   }),
   coverage: PropTypes.arrayOf(
     PropTypes.shape({
-    start: PropTypes.number.isRequired,
-    end: PropTypes.number.isRequired,
-    color : PropTypes.string,
-    bgcolor : PropTypes.string,
-    underscore : PropTypes.bool,
-    tooltip : PropTypes.string,
-    onclick : PropTypes.func,
-  })),
+      start: PropTypes.number.isRequired,
+      end: PropTypes.number.isRequired,
+      color : PropTypes.string,
+      bgcolor : PropTypes.string,
+      underscore : PropTypes.bool,
+      tooltip : PropTypes.string,
+      onclick : PropTypes.func,
+    })),
   legend: PropTypes.arrayOf(
     PropTypes.shape({
-    name: PropTypes.string,
-    color: PropTypes.string,
-    underscore: PropTypes.bool,
-  })),
+      name: PropTypes.string,
+      color: PropTypes.string,
+      underscore: PropTypes.bool,
+    })),
   seqLenClass: PropTypes.string,
   onMouseSelection: PropTypes.func,
   onSubpartSelected: PropTypes.func,
@@ -133,7 +134,7 @@ ReactSequenceViewer.defaultProps = {
   id: v4(),
   coverage: [],
   legend: [],
-  selection: [], 
+  selection: [],
   seqLenClass: "CPLChoice",
   onMouseSelection: (elem) => {},
   onSubpartSelected: (elem) => {},
