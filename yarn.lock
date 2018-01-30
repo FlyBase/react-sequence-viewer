@@ -1237,10 +1237,6 @@ bootstrap@^3.3.7:
   version "3.3.7"
   resolved "https://registry.yarnpkg.com/bootstrap/-/bootstrap-3.3.7.tgz#5a389394549f23330875a3b150656574f8a9eb71"
 
-bower@^1.3.12:
-  version "1.8.2"
-  resolved "https://registry.yarnpkg.com/bower/-/bower-1.8.2.tgz#adf53529c8d4af02ef24fb8d5341c1419d33e2f7"
-
 brace-expansion@^1.1.7:
   version "1.1.8"
   resolved "https://registry.yarnpkg.com/brace-expansion/-/brace-expansion-1.1.8.tgz#c07b211c7c952ec1f8efd51a77ef0d1d3990a292"
@@ -4057,9 +4053,13 @@ istanbul@^0.4.0:
     which "^1.1.1"
     wordwrap "^1.0.0"
 
-jquery@^3.1.1, jquery@x.x.x:
+jquery@^3.1.1:
   version "3.2.1"
   resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.2.1.tgz#5c4d9de652af6cd0a770154a631bba12b015c787"
+
+jquery@x.x.x:
+  version "3.3.1"
+  resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.3.1.tgz#958ce29e81c9790f31be7792df5d4d95fc57fbca"
 
 js-base64@^2.1.9:
   version "2.4.0"
@@ -4374,6 +4374,10 @@ locate-path@^2.0.0:
 lodash.camelcase@^4.3.0:
   version "4.3.0"
   resolved "https://registry.yarnpkg.com/lodash.camelcase/-/lodash.camelcase-4.3.0.tgz#b28aa6288a2b9fc651035c7711f65ab6190331a6"
+
+lodash.debounce@^4.0.8:
+  version "4.0.8"
+  resolved "https://registry.yarnpkg.com/lodash.debounce/-/lodash.debounce-4.0.8.tgz#82d79bff30a67c4005ffd5e2515300ad9ca4d7af"
 
 lodash.flattendeep@^4.4.0:
   version "4.4.0"
@@ -6547,14 +6551,14 @@ send@0.16.1:
     range-parser "~1.2.0"
     statuses "~1.3.1"
 
-"sequence-viewer@github:FlyBase/sequence-viewer":
+"sequence-viewer@https://github.com/FlyBase/sequence-viewer/archive/v0.2.29-fb.1.tar.gz":
   version "0.2.29"
-  resolved "https://codeload.github.com/FlyBase/sequence-viewer/tar.gz/be81a94aa8bfdf025f62b0a779ef352aaf7cfd60"
+  resolved "https://github.com/FlyBase/sequence-viewer/archive/v0.2.29-fb.1.tar.gz#029a0f59ede499cc2eb963a7df6fdbdff9323ce2"
   dependencies:
     biojs-events x.x.x
-    bower "^1.3.12"
     grunt-cli "^0.1.13"
     jquery x.x.x
+    lodash.debounce "^4.0.8"
 
 serialize-javascript@^1.4.0:
   version "1.4.0"
