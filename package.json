@@ -20,7 +20,7 @@
     "test:watch": "nwb test --server"
   },
   "dependencies": {
-    "sequence-viewer": "https://github.com/FlyBase/sequence-viewer/archive/v0.2.29-fb.1.tar.gz",
+    "sequence-viewer": "https://github.com/FlyBase/sequence-viewer/archive/v0.2.29-fb.2.tar.gz",
     "uuid": "^3.0.1"
   },
   "peerDependencies": {
