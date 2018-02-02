@@ -1,6 +1,6 @@
 {
   "name": "react-sequence-viewer",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "A React wrapper around the BioJS sequence-viewer component",
   "main": "lib/index.js",
   "jsnext:main": "es/index.js",
@@ -20,7 +20,7 @@
     "test:watch": "nwb test --server"
   },
   "dependencies": {
-    "sequence-viewer": "https://github.com/FlyBase/sequence-viewer/archive/v0.2.29-fb.1.tar.gz",
+    "sequence-viewer": "https://github.com/FlyBase/sequence-viewer/archive/v0.2.29-fb.2.tar.gz",
     "uuid": "^3.0.1"
   },
   "peerDependencies": {
